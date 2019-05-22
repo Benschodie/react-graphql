@@ -1,0 +1,25 @@
+
+.Home {
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr)
+}
+
+.Home__headline {
+  font-size: 40px;
+}
+
+.container{
+  background-color: rgb(232, 234, 236);
+  grid-column-start: 4;
+  grid-column-end: 10;
+  padding: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}

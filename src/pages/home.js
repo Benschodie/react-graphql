@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
+import './Home.css'
+
 const accessToken =
   "dc2eb2f0153072d1a478658f7599cfaa0477632bc7ba981510b9bb703efb7d9f";
 const spaceId = "f7lhvowaprbt";
@@ -86,21 +88,20 @@ class Home extends Component {
     console.table(items);
 
     return (
-      <div className="App">
+      <div className="Home">
         {items.map((item) => {
           const richText = item.ricHText.json;
           documentToReactComponents(richText);
           console.log(richText);
           return(
-            <>
-              <h1>{item.titel}</h1>
+            <div className="container">
+              <h1 className="Home__headline">{item.titel}</h1>
               <p>{item.ort}</p>
-              <p>{item.datum}</p>
               <p>{item.beschreibung}</p>
-              <p>{item.product}</p>
+              <p><strong>{item.product}</strong></p>
               <p>{item.productFamily}</p>
               <p>{documentToReactComponents(richText)}</p>
-            </>
+            </div>
           )
         })}
       </div>
